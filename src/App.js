@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Addcard from "./component/Addcard";
+import Addnote from './component/Addnote';
+import Navbar from "./component/Navbar"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+ state={
+      sendNotes:[ ]
+ }
+ addNote=(sendNotes)=>{
+   sendNotes.id=5+ Math.floor((Math.random()*100));
+ console.log(sendNotes);
+ let sendNote=[...this.state.sendNotes,sendNotes]
+ this.setState({
+   sendNotes:sendNote
+ })
+ }
+deleteNote=(id)=>{
+ let newList=this.state.sendNotes.filter((note)=>{
+    return note.id!==id
+   
+ })
+ this.setState({
+  sendNotes:newList
+})
+}
+ 
+  render(){
+    return (
+      <div className="App">
+        <Navbar/>
+        <Addnote addNote={this.addNote}/>
+        <Addcard sendNotes={this.state.sendNotes} deleteNote={this.deleteNote}/>
+      </div>
+    );
+  }
 }
 
 export default App;

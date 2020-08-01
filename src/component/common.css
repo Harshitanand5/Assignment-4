@@ -1,0 +1,48 @@
+
+.notes{
+    width: 70%;
+    height: auto;
+    margin:20px auto;
+    border: 2px solid lightgray;
+    padding:40px ;
+
+}
+textarea{
+    border-color:lightgray;
+    outline: none;
+}
+.add{
+    width: 62%;
+    margin:20px auto;
+    height: auto;
+}
+.cardcontent{
+    text-align: left;
+    padding-left: 3px;
+    
+}
+
+.cardadd{
+    display:inline-block;
+    width: 250px;
+    height: auto;
+    margin:5px;
+    text-align: center;
+    padding-top: 0px;
+    box-shadow: 10px 10px 10px grey;
+    color:white;
+    background-color: grey;
+    
+}
+.heading{
+    height: auto;
+    color:white;
+    font-weight: bold;
+}
+button{
+    
+    padding: 10px 20px;
+    background-color: #ee1f10;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
